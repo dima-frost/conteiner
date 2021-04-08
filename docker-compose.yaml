@@ -16,9 +16,9 @@ services:
     ports:
       - 8080:80
 
-  pythonTest:
-    build: pytest/
-    image: pytest:1.0
+  pythonflask:
+    build: flask/
+    image: flask:1.0
     ports:
       - 8081:8080
 
