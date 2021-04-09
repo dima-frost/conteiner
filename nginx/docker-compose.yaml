@@ -4,11 +4,10 @@ services:
     build:
       context: ./
       args:
-        - defname=VAHA
-        - defage=30
+        - NAME=Nginx
+        - STATUS=OK
     image: dimafrost/customnginx:1.1
     environment:
-      - NAME=Dmytro
-      - AGE=28
+      - NAME=envNginx
     ports:
       - 8080:80

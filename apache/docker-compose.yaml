@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  customApache:
+      build: ./
+        image: dimafrost/customapache:1.0
+        environment:
+          - NAME=Apache
+          - STATUS=OK
+        ports:
+          - 8082:80
+    ports:
+      - 9082:80
