@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  customNginx:
+    build:
+      context: ./
+      args:
+        - defname=VAHA
+        - defage=30
+    image: dimafrost/customnginx:1.1
+    environment:
+      - NAME=Dmytro
+      - AGE=28
+    ports:
+      - 8080:80

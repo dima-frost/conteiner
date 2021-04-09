@@ -1,11 +1,11 @@
-version: "3.7"
+version: "3"
 services:
   customNginx:
     build: nginx/
     image: dimafrost/customnginx:1.0
     environment:
-      NAME: Dmytro
-      AGE: 28
+      - NAME=Dmytro
+      - AGE=28
     ports:
       - 8080:80
 

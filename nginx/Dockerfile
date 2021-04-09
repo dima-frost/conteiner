@@ -1,6 +1,10 @@
 FROM nginx:latest
 LABEL mainteiner="frostdimonlex@gmail.com"
 WORKDIR usr/share/nginx/html
-ENV NAME=Dima
-ENV AGE=27
-RUN rm index.html && touch index.html &&  echo "My name is ${NAME} and I am ${AGE} years old." > index.html
+ARG defname
+ARG defage
+ENV NAME=$defname
+ENV AGE=$defage
+ADD ./script.sh ./
+RUN chmod a+x ./script.sh
+RUN ./script.sh
