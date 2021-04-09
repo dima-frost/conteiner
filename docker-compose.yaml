@@ -1,29 +1,22 @@
 version: "3.7"
 services:
-  alpineForgit:
-    build: alpine/
-    image: alpineforgit:1.0
-    command: git clone https://github.com/dima-frost/docker
-    volumes:
-      - "/home/user/gitrepo:/gitRep"
-
   customNginx:
     build: nginx/
-    image: customnginx:1.0
+    image: dimafrost/customnginx:1.0
     environment:
       NAME: Dmytro
       AGE: 28
     ports:
       - 8080:80
 
-  pythonflask:
-    build: flask/
-    image: flask:1.0
+  pyapp:
+    build: pyapp/
+    image: dimafrost/pyapp:1.0
     ports:
       - 8081:8080
 
   customApache:
     build: apache/
-    image: customapache:1.0
+    image: dimafrost/customapache:1.0
     ports:
       - 8082:80
