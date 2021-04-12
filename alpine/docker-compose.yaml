@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   alpineForgit:
-    build: alpine/
-    image: alpineforgit:1.0
+    build: ./
+    image: dimafrost/alpineforgit:1.1
     command: git clone https://github.com/dima-frost/docker
     volumes:
-      - "/home/user/gitrepo:/gitRep"
+      - "./gitRep:/gitRep"

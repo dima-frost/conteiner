@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      -image: circleci/golang:1.15
+        auth:
+          username: dimafrost
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+
+      - setup_remote_docker:
+          version: 19.03.13
+      - run:
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+            docker run dimafrost/alpineforgit
+            cd docker
+            docker-compose up
