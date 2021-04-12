@@ -14,5 +14,9 @@ jobs:
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
             docker run -v ~/gitRep:/gitRep dimafrost/alpineforgit:1.1  git clone https://github.com/dima-frost/docker
-            cd ~/gitRep/docker
-            docker-compose up
+            pwd
+            ls
+            cd ~/
+            ls
+     #       cd ~/gitRep/docker
+     #       docker-compose up
