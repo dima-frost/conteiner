@@ -20,7 +20,4 @@ jobs:
       - run:
           name: docker-compose up/down
           command:  |
-            pwd
-            ls
-            cd project
             docker-compose up
