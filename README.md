@@ -1,2 +1,1 @@
-[![CircleCI](https://circleci.com/gh/dimafrost/Demo-ci.svg?style=for-the-badge&logo=appveyor)](https://app.circleci.com/pipelines/github/dima-frost/docker/16/workflows/60e3b832-2221-4bf2-8baa-332e59fbea79/jobs/18)
-{<img src="https://circleci.com/gh/dimafrost/docker/.svg?style=svg" alt="dima-frost" />}[https://app.circleci.com/pipelines/github/dima-frost/docker/16/workflows/60e3b832-2221-4bf2-8baa-332e59fbea79/jobs/18]
+[![CircleCI](https://circleci.com/gh/dima-frost/docker.svg?style=svg&circle-token=d2842da9434e0f88afc9108765f130149bb30dc7)](https://app.circleci.com/pipelines/github/dima-frost/docker)
