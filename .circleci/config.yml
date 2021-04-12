@@ -19,9 +19,8 @@ jobs:
             docker run -v ~/:/gitRep dimafrost/alpineforgit:1.1  git clone https://github.com/dima-frost/docker
       - run:
           name: docker-compose up/down
-          command:
+          command:  |
             pwd
             ls
             cd project
             docker-compose up
-            docker-compose down
