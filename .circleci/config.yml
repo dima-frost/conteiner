@@ -2,10 +2,9 @@ version: 2.1
 jobs:
   build:
     docker:
-      -image: circleci/golang:1.15
+      - image: circleci/golang:1.15
     steps:
       - checkout
-
       - setup_remote_docker:
           version: 19.03.13
       - run:
