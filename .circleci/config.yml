@@ -31,9 +31,9 @@ jobs:
           name: Publish Docker Image to Docker Hub
           command: |
             TAG=1.0.$CIRCLE_BUILD_NUM
-            docker --tag $DOCKERHUB_USERNAME/customapache:1.0 --tag $DOCKERHUB_USERNAME/customapache:1.0.$TAG
-            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push $DOCKERHUB_USERNAME/customapache:1.0.$TAG
+            docker tag $DOCKERHUB_USERNAME/customapache:1.0 $DOCKERHUB_USERNAME/customapache:$TAG
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
+            docker push $DOCKERHUB_USERNAME/customapache:$TAG
       - run:
           name: docker-compose down
           command: |
