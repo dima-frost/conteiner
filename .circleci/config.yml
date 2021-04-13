@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.15
+    environment:
+      IMAGE_NAME: building-on-ci
     steps:
       - checkout
       - setup_remote_docker:
@@ -25,6 +27,13 @@ jobs:
           name: docker-compose up
           command:  |
             docker-compose up -d
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: |
+            TAG=1.0.$CIRCLE_BUILD_NUM
+            docker --tag $DOCKERHUB_USERNAME/customapache:1.0 --tag $DOCKERHUB_USERNAME/customapache:1.0.$TAG
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $DOCKERHUB_USERNAME/customapache:1.0.$TAG
       - run:
           name: docker-compose down
           command: |
