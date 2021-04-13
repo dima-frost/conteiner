@@ -32,7 +32,7 @@ jobs:
           command: |
             TAG=1.0.$CIRCLE_BUILD_NUM
             docker tag $DOCKERHUB_USERNAME/customapache:1.0 $DOCKERHUB_USERNAME/customapache:$TAG
-            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push $DOCKERHUB_USERNAME/customapache:$TAG
       - run:
           name: docker-compose down
